@@ -1,0 +1,56 @@
+<mvc:View
+	controllerName="my.app.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<App>
+		<pages>
+			<Page title="Your Quick Start application is ready!">
+				<content>
+					<Table id="table0" items="{/channel}" noDataText="Keine Kanäle" mode="SingleSelect" rememberSelections="false" selectionChange="onRowSelected">
+						<items>
+							<ColumnListItem counter="0" id="item1">
+								<cells>
+									<Text id="text5" maxLines="0" text="{id}"/>
+									<Text id="text6" maxLines="0" text="{name}"/>
+									<Text id="text8" maxLines="0" text="{backend}"/>
+									<Text id="text7" maxLines="0" text="{url}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label id="label0" text="Id"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label id="label1" text="Name"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label id="label2" text="Backend"/>
+								</header>
+							</Column>
+							
+							<Column id="column3">
+								<header>
+									<Label id="label3" text="Konfig"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
+				</content>
+			<footer>
+			    <Toolbar class="sapContrast sapContrastPlus" width="100%" id="__toolbar1">
+			        <content>
+			            <Button text="Neu" width="100px" id="__button0" press="onNew"/>
+			        </content>
+			    </Toolbar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

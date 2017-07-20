@@ -6,7 +6,7 @@ from flask import jsonify
 from flask import request
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
 
@@ -29,7 +29,7 @@ class Channel(db.Model):
         self.url = url
 
     def jsonable(self):
-        return { 'name' : self.name, 'backend' : self.backend, 'url' : self.url }
+        return { 'id': self.id, 'name' : self.name, 'backend' : self.backend, 'url' : self.url }
 
 
 app.json_encoder = CustomJSONEncoder
