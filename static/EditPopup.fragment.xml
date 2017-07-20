@@ -7,7 +7,7 @@
   <content>
    <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="__form0">
 			        <sap.ui.layout.form:content>
-			            <sap.ui.core:Title text="{id}" id="__title0"/>
+			            <sap.ui.core:Title text="{selected>/id}" id="__title0"/>
 			            <Label text="Name" id="__label0"/>
 			            <Input width="100%" id="__input0" value="{selected>/name}"/>
 			            <Label text="Backend" id="__label2"/>
