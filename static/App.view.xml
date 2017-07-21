@@ -5,8 +5,15 @@
 
 	<App>
 		<pages>
-			<Page title="Your Quick Start application is ready!">
+			<Page title="TV Streams">
 				<content>
+					<IconTabBar
+		id="idIconTabBarFiori2"
+		upperCase="true"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+		<IconTabFilter icon="sap-icon://action-settings" text="Kanäle">
 					<Table id="table0" items="{/channel}" noDataText="Keine Kanäle">
 						<items>
 							<ColumnListItem counter="0" id="item1">
@@ -54,6 +61,13 @@
 							</Column>
 						</columns>
 					</Table>
+								</IconTabFilter>
+						<IconTabFilter
+				text="EPG" icon="sap-icon://sys-monitor">
+				<Text text="EPG Daten ..." />
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
 				</content>
 			<footer>
 			    <Toolbar class="sapContrast sapContrastPlus" width="100%" id="__toolbar1">
