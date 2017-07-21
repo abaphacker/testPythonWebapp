@@ -48,14 +48,23 @@ def get_ch(id):
 def create_ch():
     if not request.json or not 'name' in request.json:
         abort(400)
-    dev = Channel(request.json.get('name'), request.json.get('backend', ''), request.json.get('url',''))
-    db.session.add(dev)
+    
+    if request.json.has_key('id'):
+        dev = Channel.query.get(request.json.get('id'))
+        dev.name = request.json.get('name', dev.name)
+        dev.backend = request.json.get('backend',dev.backend)
+        dev.url = request.json.get('url', dev.url)
+    else:
+        dev = Channel(request.json.get('name'), request.json.get('backend', ''), request.json.get('url',''))
+        db.session.add(dev)
+
     db.session.commit()
     return jsonify( { 'channel': dev } ), 201
 
-@app.route('/ch/<int:id>', methods = ['DELETE'])
-def delete_ch(id):
-    db.session.delete(Users.query.get(id))
+@app.route('/ch/', methods = ['DELETE'])
+def delete_ch():
+    id = request.json.get('id')
+    db.session.delete(Channel.query.get(id))
     db.session.commit()
     return jsonify( { 'result': True } )
 

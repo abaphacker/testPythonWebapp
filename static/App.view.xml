@@ -7,7 +7,7 @@
 		<pages>
 			<Page title="Your Quick Start application is ready!">
 				<content>
-					<Table id="table0" items="{/channel}" noDataText="Keine Kanäle" mode="SingleSelect" rememberSelections="false" selectionChange="onRowSelected">
+					<Table id="table0" items="{/channel}" noDataText="Keine Kanäle">
 						<items>
 							<ColumnListItem counter="0" id="item1">
 								<cells>
@@ -15,6 +15,12 @@
 									<Text id="text6" maxLines="0" text="{name}"/>
 									<Text id="text8" maxLines="0" text="{backend}"/>
 									<Text id="text7" maxLines="0" text="{url}"/>
+									<Bar>
+									<contentMiddle>
+										<Button icon="sap-icon://delete" press="onDel"/>
+										<Button icon="sap-icon://edit" press="onEdit"/>
+									</contentMiddle>
+									</Bar>
 								</cells>
 							</ColumnListItem>
 						</items>
@@ -38,6 +44,12 @@
 							<Column id="column3">
 								<header>
 									<Label id="label3" text="Konfig"/>
+								</header>
+							</Column>
+
+							<Column id="column4">
+								<header>
+									<Label id="label4" text="Aktion"/>
 								</header>
 							</Column>
 						</columns>

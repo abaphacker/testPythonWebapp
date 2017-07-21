@@ -1,19 +1,26 @@
 <Dialog
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc" stretch="true" showHeader="true" >
   <buttons>
-      <Button id="btnInFragment" text="Close" press="doSomething"/>
+      <Button id="btnInFragment" text="Abbruch" press="onClosedialog"/>
+      <Button id="btnSave" text="Speichern" type="Accept" press="onSaveEntrie"/>
   </buttons>
   <content>
    <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="__form0">
 			        <sap.ui.layout.form:content>
-			            <sap.ui.core:Title text="{selected>/id}" id="__title0"/>
+			            <sap.ui.core:Title text="{selected>/id}" id="__title7"/>
 			            <Label text="Name" id="__label0"/>
 			            <Input width="100%" id="__input0" value="{selected>/name}"/>
 			            <Label text="Backend" id="__label2"/>
 			            <Input width="100%" id="__input2" value="{selected>/backend}"/>
 			            <Label text="Konfig" id="__label1"/>
 			            <Input width="100%" id="__input1" value="{selected>/url}"/>
+						<Label text="Kombobox" id="__label9"/>
+						<ComboBox value="{selected>/backend}">
+						<core:Item key="URL" text="URL" />
+						<core:Item key="USTREAMIX" text="USTREAMIX" />
+						</ComboBox>
 			            </sap.ui.layout.form:content>
 			    </sap.ui.layout.form:SimpleForm>
     </content>
